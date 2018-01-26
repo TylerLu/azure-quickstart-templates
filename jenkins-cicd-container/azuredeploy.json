@@ -162,7 +162,7 @@
         "metadata": {
           "description": "URL to a public git repository that includes a Dockerfile."
         },
-        "defaultValue": "https://github.com/Azure/azure-quickstart-templates"
+        "defaultValue": "https://github.com/TylerLu/azure-quickstart-templates"
       }
     },
     "variables": {
@@ -172,7 +172,7 @@
       "acrName": "[parameters('acrName')]",
       "virtualNetworkName": "virtual-network",
       "subnetName": "default-subnet",
-      "_artifactsLocation": "https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/jenkins-cicd-container/",
+      "_artifactsLocation": "https://raw.githubusercontent.com/TylerLu/azure-quickstart-templates/jenkins-cicd-container/jenkins-cicd-container/",
       "_artifactsLocationSasToken": ""
     },
     "resources": [
