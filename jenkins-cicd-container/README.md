@@ -59,7 +59,7 @@ By setting up a continuous build to produce your container images and orchestrat
 
 1. Click **Deploy to Azure** to start the deployment.
 
-   <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2Fjenkins-cicd-container%2Fazuredeploy.json" target="_blank">
+   <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FTylerLu%2Fazure-quickstart-templates%2Fjenkins-cicd-container%2Fjenkins-cicd-container%2Fazuredeploy.json" target="_blank">
 
    <img src="https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/1-CONTRIBUTION-GUIDE/images/deploytoazure.png"/>
    </a>
