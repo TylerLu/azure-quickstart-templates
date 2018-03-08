@@ -55,14 +55,13 @@
     "variables": {
       "nicName": "[concat(parameters('jenkinsVMName'), '-nic')]",
       "publicIPAddressName": "[concat(parameters('jenkinsVMName'), '-ip')]",
-      "vmNameme": "[concat(parameters('jenkinsVMName'), '')]",
+      "vmName": "[concat(parameters('jenkinsVMName'), '')]",
       "vmExtensionName": "[concat(parameters('jenkinsVMName'), '-ini')]",
-      "securityGroupName": "[concat(parameters('jenkinsVMName'), '-nsg')]",
-      "scriptFolder": "scripts"
+      "securityGroupName": "[concat(parameters('jenkinsVMName'), '-nsg')]"
     },
     "resources": [
       {
-        "apiVersion": "2016-09-01",
+        "apiVersion": "2017-10-01",
         "type": "Microsoft.Network/publicIPAddresses",
         "name": "[variables('publicIPAddressName')]",
         "location": "[resourceGroup().location]",
@@ -74,7 +73,7 @@
         }
       },
       {
-        "apiVersion": "2015-06-15",
+        "apiVersion": "2017-10-01",
         "type": "Microsoft.Network/networkSecurityGroups",
         "name": "[variables('securityGroupName')]",
         "location": "[resourceGroup().location]",
@@ -140,9 +139,9 @@
         }
       },
       {
-        "apiVersion": "2016-04-30-preview",
+        "apiVersion": "2017-12-01",
         "type": "Microsoft.Compute/virtualMachines",
-        "name": "[variables('vmNameme')]",
+        "name": "[variables('vmName')]",
         "location": "[resourceGroup().location]",
         "dependsOn": [
           "[resourceId('Microsoft.Network/networkInterfaces', variables('nicName'))]"
@@ -152,7 +151,7 @@
             "vmSize": "Standard_DS1_v2"
           },
           "osProfile": {
-            "computerName": "[variables('vmNameme')]",
+            "computerName": "[variables('vmName')]",
             "adminUsername": "[parameters('linuxAdminUsername')]",
             "adminPassword": "[parameters('linuxAdminPassword')]"
           },
@@ -182,10 +181,10 @@
           {
             "type": "extensions",
             "name": "[variables('vmExtensionName')]",
-            "apiVersion": "2015-06-15",
+            "apiVersion": "2017-12-01",
             "location": "[resourceGroup().location]",
             "dependsOn": [
-              "[resourceId('Microsoft.Compute/virtualMachines', variables('vmNameme'))]"
+              "[resourceId('Microsoft.Compute/virtualMachines', variables('vmName'))]"
             ],
             "properties": {
               "publisher": "Microsoft.Azure.Extensions",
@@ -194,7 +193,7 @@
               "autoUpgradeMinorVersion": true,
               "settings": {
                 "fileUris": [
-                  "[concat(parameters('_artifactsLocation'), variables('scriptFolder'), '/jenkins/jenkins-acr-aks.sh', parameters('_artifactsLocationSasToken'))]"
+                  "[concat(parameters('_artifactsLocation'), '/scripts/jenkins/jenkins-acr-aks.sh', parameters('_artifactsLocationSasToken'))]"
                 ]
               },
               "protectedSettings": {

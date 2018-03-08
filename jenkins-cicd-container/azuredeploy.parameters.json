@@ -3,13 +3,13 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
       "spClientId": {
-        "value": "GEN-UNIQUE-11"
+        "value": "GEN-UNIQUE"
       },
       "spClientSecret": {
         "value": "GEN-PASSWORD"
       },
       "linuxAdminUsername": {
-        "value": "azureuser"
+        "value": "GEN-UNIQUE"
       },
       "linuxAdminPassword": {
         "value": "GEN-PASSWORD"
@@ -18,34 +18,22 @@
         "value": "GEN-SSH-PUB-KEY"
       },
       "cosmosDbName": {
-        "value": "GEN-UNIQUE-14"
+        "value": "GEN-UNIQUE"
       },
       "acrName": {
-        "value": "GEN-UNIQUE-15"
+        "value": "GEN-UNIQUE"
       },
       "jenkinsDnsPrefix": {
         "value": "GEN-UNIQUE"
       },
       "grafanaDnsPrefix": {
-        "value": "GEN-UNIQUE-12"
+        "value": "GEN-UNIQUE"
       },
       "kubernetesDnsPrefix": {
-        "value": "GEN-UNIQUE-13"
+        "value": "GEN-UNIQUE"
       },
       "kubernetesClusterName": {
-        "value": "GEN-UNIQUE-16"
-      },
-      "kubernetesAgentCount": {
-        "value": 1
-      },
-      "kubernetesAgentVMSize": {
-        "value": "Standard_D2_v2"
-      },
-      "kubernetesVersion": {
-        "value": "1.7.7"
-      },
-      "gitRepository": {
-        "value": "https://github.com/Azure/azure-quickstart-templates"
+        "value": "GEN-UNIQUE"
       }
     }
 }
