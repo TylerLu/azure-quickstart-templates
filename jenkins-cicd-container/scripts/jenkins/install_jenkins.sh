@@ -221,7 +221,7 @@ server {
         proxy_set_header        X-Forwarded-Proto \$scheme;
 
 
-        # Fix the “It appears that your reverse proxy set up is broken" error.
+        # Fix the "It appears that your reverse proxy set up is broken" error.
         proxy_pass          http://localhost:8080;
         proxy_redirect      http://localhost:8080 http://${jenkins_fqdn};
         proxy_read_timeout  90;
